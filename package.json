@@ -1,0 +1,43 @@
+{
+  "name": "material-next-ts",
+  "version": "5.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@iconify/react": "^4.1.0",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "chart.js": "^4.3.0",
+    "cookie": "^0.5.0",
+    "i18next": "^21.8.11",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "js-cookie": "^3.0.1",
+    "next": "latest",
+    "react": "latest",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "latest",
+    "react-i18next": "^11.17.4",
+    "stylis-plugin-rtl": "^2.1.1",
+    "swiper": "^9.3.2"
+  },
+  "devDependencies": {
+
+    "@types/cookie": "^0.5.1",
+    "@types/js-cookie": "^3.0.3",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,261 @@
+.res-img {
+  max-width: 100%;
+  height: auto;
+}
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #7c7c7c;
+  --blue: #2e2c8f;
+  --light-gray: #f0f0f0;
+  --orange: #ffc000;
+  --green: #92d050;
+  --dark-gray: #313131;
+  --less-dark-gray: #3f3f3f;
+  --text-gray: #ececec;
+  --text-dark-gray: #aaaaaa;
+}
+
+body {
+  margin: 0;
+  padding:0;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-dark-mode {
+  background-color: var(--dark-gray);
+  color: var(--light-gray);
+}
+
+.container {
+  width: 99%;
+}
+
+/* ------------------------------------------ TOP LINKS ------------------------------------------ */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 2rem;
+}
+
+.link {
+  border: none;
+  background: none;
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: var(--gray);
+}
+
+.dropdown.active > .link,
+.link:hover {
+  color: var(--black);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: var(--white);
+  padding: 0 0.75rem 0.75rem 0.75rem;
+  border: solid 2px var(--blue);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  z-index: 100;
+  color: inherit;
+}
+
+.dropdown-menu-dark {
+  background-color: var(--dark-gray);
+  color: var(--black);
+}
+
+.drop-view {
+  width: 200px;
+}
+
+.dropdown.active > .link + .dropdown-menu {
+  transform: translateY(0);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.dropdown-menu a {
+  /* text-transform: capitalize; */
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+/* -------------------------------------------- OPTIONS ------------------------------------------------ */
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.options-1 {
+  margin-right: 20px;
+  background-color: var(--light-gray);
+}
+
+.options-2 {
+  background-color: var(--light-gray);
+}
+
+.options-n-dark-mode {
+  background-color: var(--less-dark-gray);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 10px;
+}
+
+.option-icon {
+  border: none;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.option img {
+  max-height: 25px;
+  max-width: 25px;
+  padding: 2px;
+}
+
+/* -------------------------------------------- EDITOR TEXT CONTAINER ----------------------------------------- */
+
+.editor {
+  border: solid 1px var(--blue);
+  margin: 5px;
+  z-index: 1;
+  resize: horizontal;
+}
+
+.ace_mobile-menu {
+  display: none !important;
+}
+
+#editor {
+  height: 40rem;
+  /* position: absolute;
+  top: 190px;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  touch-action: auto;
+}
+
+.highLight {
+  background-color: #2e2c8f;
+  font-size: 5rem;
+}
+
+.editor-dark-mode {
+  background-color: var(--dark-gray);
+  color: var(--text-gray);
+}
+
+/* .ace_gutter-cell-dark {
+  background-color: var(--less-dark-gray);
+  color: var(--text-dark-gray);
+} */
+.ace_split-view-container .ace_splitter {
+  display: none;
+}
+
+/* --------------------------------------- VERTICAL TOGGLE BUTTON -------------------------------------- */
+.vertical-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--black);
+  border: solid 2px var(--black);
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.5rem;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  padding: 1rem;
+  user-select: none;
+  z-index: 2;
+}
+
+.vertical-enactive {
+  background-color: var(--orange);
+}
+
+.vertical-active {
+  background-color: var(--green);
+}
+
+.vertical-toggle-status {
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .vertical-toggle {
+    font-size: 1.5rem;
+    width: 120px;
+    right: 15px;
+    bottom: 20px;
+  }
+
+  .vertical-toggle-status {
+    font-size: 4rem;
+  }
+
+  .top-bar {
+    font-size: 1.7rem;
+  }
+
+  .link {
+    font-size: 1.4rem;
+  }
+
+  .editor {
+    resize: none;
+  }
+}
+

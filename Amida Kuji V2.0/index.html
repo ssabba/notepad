@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amida Kuji</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./game.css" />
+  </head>
+  <body>
+    <div id="container" class="container">
+      <div id="start-page" class="start-page">
+        <h1 onclick="openFullscreen()" class="title">Ghost Leg</h1>
+        <form class="leg-count-container">
+          <svg
+            onclick="increaseLeg()"
+            id="increase-btn"
+            class="change-btn increase-btn"
+            viewBox="0 0 15 15"
+            style="enable-background: new 0 0 15 15"
+          >
+            <path
+              fill="orange"
+              stroke="#000000"
+              stroke-width="0.5"
+              d="M7.5385,2
+	C7.2437,2,7.0502,2.1772,6.9231,2.3846l-5.8462,9.5385C1,12,1,12.1538,1,12.3077C1,12.8462,1.3846,13,1.6923,13h11.6154
+	C13.6923,13,14,12.8462,14,12.3077c0-0.1538,0-0.2308-0.0769-0.3846L8.1538,2.3846C8.028,2.1765,7.7882,2,7.5385,2z"
+            />
+          </svg>
+          <input
+            id="leg-input"
+            class="leg-input"
+            type="number"
+            min="2"
+            value="5"
+            max="20"
+          />
+          <svg
+            onclick="decreaseLeg()"
+            id="decrease-btn"
+            class="change-btn decrease-btn"
+            viewBox="0 0 15 15"
+            style="enable-background: new 0 0 15 15"
+          >
+            <path
+              fill="orange"
+              stroke="#000000"
+              stroke-width="0.5"
+              d="M7.5385,2
+	C7.2437,2,7.0502,2.1772,6.9231,2.3846l-5.8462,9.5385C1,12,1,12.1538,1,12.3077C1,12.8462,1.3846,13,1.6923,13h11.6154
+	C13.6923,13,14,12.8462,14,12.3077c0-0.1538,0-0.2308-0.0769-0.3846L8.1538,2.3846C8.028,2.1765,7.7882,2,7.5385,2z"
+            />
+          </svg>
+        </form>
+        <button id="start-btn" onclick="start(event)" class="start-btn">
+          Start!
+        </button>
+      </div>
+      <div id="menu-page" class="menu-page">
+        <table class="home-container" onclick="goToStart()">
+          <td>
+            <svg class="home-btn" viewBox="0 0 60 60" version="1.0" y="0" x="0">
+              <path
+                style="
+                  stroke-linejoin: round;
+                  fill-rule: evenodd;
+                  stroke: #333333;
+                  stroke-linecap: round;
+                  stroke-width: 3.125;
+                  fill: #b3b3b3;
+                "
+                d="m55.78 30.357c0.149-14.104-11.187-25.651-25.291-25.8-14.104-0.1491-25.651 11.156-25.8 25.26-0.1491 14.104 11.156 25.682 25.26 25.831s25.682-11.187 25.831-25.291zm-20.208-18.84l-0.145 13.656-0.242 11.092-0.137 12.968-18.613-18.979 19.137-18.737z"
+                sodipodi:stroke-cmyk="(0 0 0 0.8)"
+              />
+            </svg>
+          </td>
+          <td>
+            <h1 class="home-title">Home</h1>
+          </td>
+        </table>
+
+        <div class="main" id="main">
+          <div id="mobile-leg" class="mobile-leg">
+            <button
+              onclick="slideMobileLegRight(this)"
+              id="mobile-scroll-right"
+              class="mobile-scroll mobile-scroll-right"
+            >
+              <svg
+                width="23px"
+                height="67px"
+                viewBox="0 0 46.766148 134.79156"
+                xmlns="http://www.w3.org/2000/svg"
+                style="transform: scaleX(-1)"
+              >
+                <path
+                  id="path4732"
+                  style="
+                    fill: none;
+                    stroke: #000000;
+                    stroke-width: 2.64583;
+                    stroke-linecap: round;
+                    stroke-linejoin: miter;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                  d="M 45.443236,67.442855 7.323221,133.46865 m 0,-132.145734 38.120015,66.025798 M 39.44293,67.442854 1.322915,133.46865 m 0,-132.145735 38.120015,66.025798"
+                />
+              </svg>
+            </button>
+            <div class="leg-and-btns">
+              <div class="leg-show-container">
+                <div class="scroll-btn">
+                  <svg
+                    id="scroll-btn-p"
+                    class="scroll-btn-p"
+                    onclick="rightScrollLegShow(this)"
+                    width="20px"
+                    height="60px"
+                    viewBox="0 0 7.9374995 23.812502"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      sodipodi:type="star"
+                      style="fill: #000000; stroke-width: 0.264583"
+                      id="path169"
+                      inkscape:flatsided="false"
+                      sodipodi:sides="3"
+                      sodipodi:cx="78.917145"
+                      sodipodi:cy="53.742855"
+                      sodipodi:r1="46.279785"
+                      sodipodi:r2="23.139893"
+                      sodipodi:arg1="1.0387624"
+                      sodipodi:arg2="2.0859599"
+                      inkscape:rounded="0"
+                      inkscape:randomized="0"
+                      d="M 102.39429,93.625713 67.516647,73.879471 32.639006,54.133227 l 34.539567,-20.3318 34.539567,-20.331802 0.33807,40.078043 z"
+                      inkscape:transform-center-x="1.3213973"
+                      inkscape:transform-center-y="-0.21165877"
+                      transform="matrix(0.11431581,6.215622e-4,-9.9997083e-4,0.29707138,-3.6770228,-4.0646643)"
+                      inkscape:export-filename="right arraw.svg"
+                      inkscape:export-xdpi="96"
+                      inkscape:export-ydpi="96"
+                    />
+                  </svg>
+                </div>
+
+                <table onscroll="checkSliders()" id="leg-show" class="leg-show">
+                  <tbody>
+                    <tr id="top-input-row" class="top-input-row"></tr>
+                    <tr
+                      id="middle-connect-line"
+                      class="middle-connect-line"
+                    ></tr>
+                    <tr id="bottom-input-row" class="bottom-input-row"></tr>
+                  </tbody>
+                </table>
+                <div class="scroll-btn">
+                  <svg
+                    id="scroll-btn-n"
+                    class="scroll-btn-n"
+                    onclick="leftScrollLegShow(this)"
+                    width="20px"
+                    height="60px"
+                    viewBox="0 0 7.9374995 23.812502"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      sodipodi:type="star"
+                      style="fill: #000000; stroke-width: 0.264583"
+                      id="path169"
+                      inkscape:flatsided="false"
+                      sodipodi:sides="3"
+                      sodipodi:cx="78.917145"
+                      sodipodi:cy="53.742855"
+                      sodipodi:r1="46.279785"
+                      sodipodi:r2="23.139893"
+                      sodipodi:arg1="1.0387624"
+                      sodipodi:arg2="2.0859599"
+                      inkscape:rounded="0"
+                      inkscape:randomized="0"
+                      d="M 102.39429,93.625713 67.516647,73.879471 32.639006,54.133227 l 34.539567,-20.3318 34.539567,-20.331802 0.33807,40.078043 z"
+                      inkscape:transform-center-x="-1.3213973"
+                      inkscape:transform-center-y="0.21165897"
+                      transform="matrix(-0.11431581,-6.215622e-4,9.9997083e-4,-0.29707138,11.614523,27.877164)"
+                      inkscape:export-filename=".\path169.svg"
+                      inkscape:export-xdpi="96"
+                      inkscape:export-ydpi="96"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="start-game-btn-container">
+                <button onclick="gotoRunPage()" class="start-game-btn">
+                  Generate
+                </button>
+                <button class="start-game-btn" onclick="shuffle()">
+                  Shuffle
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="button-mobile">
+            <button
+              onclick="slideMobileLegLeft()"
+              id="mobile-scroll-left"
+              class="mobile-scroll mobile-scroll-left"
+            >
+              <svg
+                width="23px"
+                height="67px"
+                viewBox="0 0 46.766148 134.79156"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="path4732"
+                  style="
+                    fill: none;
+                    stroke: #000000;
+                    stroke-width: 2.64583;
+                    stroke-linecap: round;
+                    stroke-linejoin: miter;
+                    stroke-dasharray: none;
+                    stroke-opacity: 1;
+                  "
+                  d="M 45.443236,67.442855 7.323221,133.46865 m 0,-132.145734 38.120015,66.025798 M 39.44293,67.442854 1.322915,133.46865 m 0,-132.145735 38.120015,66.025798"
+                />
+              </svg>
+            </button>
+            <div class="entry-table-container">
+              <div class="entry-table">
+                <div>Top</div>
+                <div>Bottom</div>
+                <div id="top-input-cont" class="td-input-field"></div>
+                <div id="bottom-input-cont" class="td-input-field"></div>
+              </div>
+              <button
+                onclick="slideMobileLegLeft()"
+                id="insert-btn"
+                class="start-game-btn"
+              >
+                Insert
+              </button>
+              <h2 class="lines-inp-text">
+                Number of horizontal lines created per interval
+              </h2>
+              <div class="h-line-inputs" id="h-line-inputs">
+                <input
+                  type="number"
+                  placeholder="2"
+                  class="h-line-input h-line-min"
+                  id="h-line-min"
+                  min="0"
+                  max="8"
+                  maxlength="1"
+                />
+                <input
+                  type="number"
+                  placeholder="8"
+                  class="h-line-input h-line-max"
+                  id="h-line-max"
+                  min="0"
+                  max="8"
+                  maxlength="1"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="run-page" class="run-page">
+        <div class="ghost-leg">
+          <div class="ghost-scroll-btn-container">
+            <svg
+              id="ghost-scroll-btn-p"
+              class="ghost-scroll-btn ghost-scroll-btn-p"
+              onclick="runRightScrollLegShow(this)"
+              width="20px"
+              height="60px"
+              viewBox="0 0 7.9374995 23.812502"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                sodipodi:type="star"
+                style="fill: #000000; stroke-width: 0.264583"
+                id="path169"
+                inkscape:flatsided="false"
+                sodipodi:sides="3"
+                sodipodi:cx="78.917145"
+                sodipodi:cy="53.742855"
+                sodipodi:r1="46.279785"
+                sodipodi:r2="23.139893"
+                sodipodi:arg1="1.0387624"
+                sodipodi:arg2="2.0859599"
+                inkscape:rounded="0"
+                inkscape:randomized="0"
+                d="M 102.39429,93.625713 67.516647,73.879471 32.639006,54.133227 l 34.539567,-20.3318 34.539567,-20.331802 0.33807,40.078043 z"
+                inkscape:transform-center-x="1.3213973"
+                inkscape:transform-center-y="-0.21165877"
+                transform="matrix(0.11431581,6.215622e-4,-9.9997083e-4,0.29707138,-3.6770228,-4.0646643)"
+                inkscape:export-filename="right arraw.svg"
+                inkscape:export-xdpi="96"
+                inkscape:export-ydpi="96"
+              />
+            </svg>
+          </div>
+          <div
+            onscroll="runCheckSliders()"
+            id="ghost-leg-container"
+            class="ghost-leg-container"
+          ></div>
+          <div class="ghost-scroll-btn-container">
+            <svg
+              id="ghost-scroll-btn-n"
+              class="ghost-scroll-btn scroll-btn-n"
+              onclick="runLeftScrollLegShow(this)"
+              width="20px"
+              height="60px"
+              viewBox="0 0 7.9374995 23.812502"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                sodipodi:type="star"
+                style="fill: #000000; stroke-width: 0.264583"
+                id="path169"
+                inkscape:flatsided="false"
+                sodipodi:sides="3"
+                sodipodi:cx="78.917145"
+                sodipodi:cy="53.742855"
+                sodipodi:r1="46.279785"
+                sodipodi:r2="23.139893"
+                sodipodi:arg1="1.0387624"
+                sodipodi:arg2="2.0859599"
+                inkscape:rounded="0"
+                inkscape:randomized="0"
+                d="M 102.39429,93.625713 67.516647,73.879471 32.639006,54.133227 l 34.539567,-20.3318 34.539567,-20.331802 0.33807,40.078043 z"
+                inkscape:transform-center-x="-1.3213973"
+                inkscape:transform-center-y="0.21165897"
+                transform="matrix(-0.11431581,-6.215622e-4,9.9997083e-4,-0.29707138,11.614523,27.877164)"
+                inkscape:export-filename=".\path169.svg"
+                inkscape:export-xdpi="96"
+                inkscape:export-ydpi="96"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="btns">
+          <button class="goto-results-btn" onclick="gotoResult(this)">
+            Results</button
+          ><button class="regen" onclick="reGenerate()">Regenerate</button>
+        </div>
+      </div>
+      <div id="result-page" class="result-page">
+        <div class="result-page-container">
+          <div id="results" class="results"></div>
+          <div class="btns">
+            <button class="restart" onclick="restart()">🔄Restart</button>
+          </div>
+        </div>
+      </div>
+      <div id="easterEgg-page" class="easterEgg-page"></div>
+    </div>
+    <script src="./game.js"></script>
+  </body>
+</html>
